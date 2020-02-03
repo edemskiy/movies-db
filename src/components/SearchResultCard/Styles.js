@@ -15,7 +15,7 @@ export const ResultContainer = styled.div`
   margin: 5px;
   padding: 8px;
   width: 166px;
-  animation: ${scaleUp} 0.25s;
+  animation: ${scaleUp} 0.2s;
   transition: all 0.25s;
   border-radius: 5px;
   &:hover {

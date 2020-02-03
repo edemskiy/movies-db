@@ -13,7 +13,6 @@ export function HomePage() {
   const [searchResults, setSearchResults] = useState([]);
 
   function seacrhMedia(event) {
-    if (inputTop === 50) setInputTop(0);
     const query = event.target.value;
     if (!query) {
       setInputTop(50);
@@ -22,7 +21,12 @@ export function HomePage() {
     }
     request(
       `https://api.themoviedb.org/3/search/multi?api_key=${API_KEY}&language=en-US&query=${query}`
-    ).then(data => setSearchResults(data.results.slice(0, 10)));
+    ).then(data => {
+      if (data.results) {
+        if (inputTop === 50) setInputTop(0);
+        setSearchResults(data.results.slice(0, 10));
+      }
+    });
   }
 
   useEffect(() => {
