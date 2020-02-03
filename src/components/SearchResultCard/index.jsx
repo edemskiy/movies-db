@@ -35,7 +35,13 @@ export function SearchResultCard({ item }) {
   return (
     <Link to={itemInfo.link + item.id}>
       <ResultContainer>
-        <Image src={`http://image.tmdb.org/t/p/w200${itemInfo.imagePath}`} />
+        <Image
+          src={
+            itemInfo.imagePath
+              ? `http://image.tmdb.org/t/p/w200${itemInfo.imagePath}`
+              : "https://www.sunnxt.com/images/placeholders/placeholder_vertical.gif"
+          }
+        />
         <Info>
           <Title>{itemInfo.name}</Title>
           <About>

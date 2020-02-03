@@ -1,6 +1,5 @@
 import React from "react";
 import { SearchResultsWrapper } from "./Styles";
-import { SearchResult } from "../SearchResult";
 import { SearchResultCard } from "../SearchResultCard";
 
 export function SearchResultsList({ searchResults }) {
