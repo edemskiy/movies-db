@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ResultContainer, Image, Info, Title, About } from "./Styles";
 import { Link } from "react-router-dom";
 
@@ -31,16 +31,18 @@ function getItemProps(item) {
 }
 
 export function SearchResultCard({ item }) {
+  const [isImageLoading, setImageLoading] = useState(true);
   const itemInfo = getItemProps(item);
   return (
     <Link to={itemInfo.link + item.id}>
-      <ResultContainer>
+      <ResultContainer loading={isImageLoading}>
         <Image
           src={
             itemInfo.imagePath
               ? `http://image.tmdb.org/t/p/w200${itemInfo.imagePath}`
               : "https://www.sunnxt.com/images/placeholders/placeholder_vertical.gif"
           }
+          onLoad={() => setImageLoading(false)}
         />
         <Info>
           <Title>{itemInfo.name}</Title>

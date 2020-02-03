@@ -10,7 +10,7 @@ const scaleUp = keyframes`
 `;
 
 export const ResultContainer = styled.div`
-  display: flex;
+  display: ${props => (props.loading ? "none" : "flex")};
   flex-direction: column;
   margin: 5px;
   padding: 8px;
