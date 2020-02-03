@@ -15,7 +15,10 @@ export const ResultContainer = styled.div`
   margin: 5px;
   padding: 8px;
   width: 166px;
+  transform: scale(0);
   animation: ${scaleUp} 0.2s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.3s;
   transition: all 0.25s;
   border-radius: 5px;
   &:hover {
