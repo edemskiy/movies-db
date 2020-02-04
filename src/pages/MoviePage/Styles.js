@@ -25,13 +25,18 @@ export const CustomBackground = styled.div`
   );
 `;
 
-export const PosterWrapper = styled.div`
-  width: 100%;
-`;
+export const PosterWrapper = styled.div``;
 export const Poster = styled.img`
-  width: 100%;
-  min-width: 140px;
-  max-width: 300px;
+  width: 300px;
+  @media screen and (max-width: 992px) {
+    width: 250px;
+  }
+  @media screen and (max-width: 768px) {
+    width: 200px;
+  }
+  @media screen and (max-width: 576px) {
+    width: 140px;
+  }
 `;
 
 export const MovieDetails = styled.div`
@@ -40,6 +45,7 @@ export const MovieDetails = styled.div`
 `;
 
 export const Title = styled.h2`
+  margin-top: 10px;
   font-size: 2rem;
 `;
 
@@ -56,3 +62,15 @@ export const OverviewTitle = styled.h3`
 export const Overview = styled.p`
   margin-top: 10px;
 `;
+
+export const MajorCrew = styled.div`
+  margin-top: 40px;
+`;
+
+export const CrewMember = styled.div`
+  margin: 5px 0;
+`;
+export const JobTitle = styled.span`
+  font-weight: 500;
+`;
+export const Name = styled.span``;
