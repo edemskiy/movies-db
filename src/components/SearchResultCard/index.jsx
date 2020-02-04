@@ -35,7 +35,7 @@ export function SearchResultCard({ item }) {
   const itemInfo = getItemProps(item);
   return (
     <Link to={itemInfo.link + item.id}>
-      <ResultContainer loading={isImageLoading}>
+      <ResultContainer loading={isImageLoading ? 1 : 0}>
         <Image
           src={
             itemInfo.imagePath
