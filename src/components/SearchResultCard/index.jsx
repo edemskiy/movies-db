@@ -27,6 +27,8 @@ function getItemProps(item) {
         info: (item["first_air_date"] || "").substr(0, 4),
         link: "/movies/"
       };
+    default:
+      return {};
   }
 }
 
