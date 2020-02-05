@@ -9,4 +9,11 @@ export const CastList = styled.div`
   flex-wrap: wrap;
   align-items: stretch;
   margin: 20px 0;
+
+  @media screen and (max-width: 576px) {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
 `;

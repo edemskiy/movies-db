@@ -13,7 +13,12 @@ export const Backdrop = styled.div`
     z-index: -1;
     background: url(${props => props.backgroundImage}) no-repeat;
     background-size: cover;
-    filter: opacity(100) grayscale(20%) contrast(130%);
+    filter: grayscale(20%) contrast(130%);
+
+    @media screen and (max-width: 576px) {
+      background-size: contain;
+      filter: none;
+    }
   }
 `;
 
@@ -23,6 +28,9 @@ export const CustomBackground = styled.div`
     rgb(0, 0, 0) 0%,
     rgba(97, 97, 97, 0.85) 100%
   );
+  @media screen and (max-width: 576px) {
+    background-image: none;
+  }
 `;
 
 export const ContentWrapper = styled.div`
@@ -35,6 +43,11 @@ export const ContentWrapper = styled.div`
 
 export const PosterWrapper = styled.div`
   text-align: center;
+
+  @media screen and (max-width: 576px) {
+    text-align: left;
+    margin-top: 65px;
+  }
 `;
 export const Poster = styled.img`
   width: 300px;
@@ -44,6 +57,9 @@ export const Poster = styled.img`
   @media screen and (max-width: 768px) {
     width: 200px;
   }
+  @media screen and (max-width: 576px) {
+    width: 30vw;
+  }
 `;
 
 export const MovieDetails = styled.div`
@@ -51,23 +67,28 @@ export const MovieDetails = styled.div`
   color: white;
   @media screen and (max-width: 576px) {
     margin: 0;
+    color: black;
   }
 `;
 
 export const Title = styled.h2`
   margin-top: 10px;
-  font-size: 2rem;
+  font-size: 2.5rem;
   @media screen and (max-width: 576px) {
-    text-align: center;
+    margin-top: -50px;
+    margin-left: 35%;
+    text-align: right;
+    font-size: 1.7rem;
   }
 `;
 
 export const ReleaseYear = styled.p`
   margin: 5px;
-  color: #afafaf;
+  color: #e0e0e0;
   font-weight: 300;
   @media screen and (max-width: 576px) {
-    text-align: center;
+    text-align: right;
+    color: #5d5d5d;
   }
 `;
 
