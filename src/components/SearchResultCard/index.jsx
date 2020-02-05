@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { ResultContainer, Image, Info, Title, About } from "./Styles";
 import { Link } from "react-router-dom";
+import { getImageURL } from "../../utils/api";
 
 function getItemProps(item) {
   switch (item.media_type) {
@@ -39,11 +40,7 @@ export function SearchResultCard({ item }) {
     <Link to={itemInfo.link + item.id}>
       <ResultContainer loading={isImageLoading ? 1 : 0}>
         <Image
-          src={
-            itemInfo.imagePath
-              ? `http://image.tmdb.org/t/p/w200${itemInfo.imagePath}`
-              : "https://www.sunnxt.com/images/placeholders/placeholder_vertical.gif"
-          }
+          src={getImageURL(itemInfo.imagePath, 200)}
           onLoad={() => setImageLoading(false)}
         />
         <Info>

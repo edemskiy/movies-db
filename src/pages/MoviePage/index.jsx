@@ -2,12 +2,13 @@ import React, { useState, useEffect } from "react";
 import { useRequest } from "../../hooks/request";
 import { getMovieDetailsURL, getMovieCrewURL } from "../../utils/api";
 import { Header } from "./Header";
+import { CastProfiles } from "./CastProfiles";
 
 export function MoviePage({ match }) {
   const { request } = useRequest();
   const [movie, setMovie] = useState({});
   const [crew, setCrew] = useState([]);
-  const [actors, setActors] = useState([]);
+  const [cast, setCast] = useState([]);
 
   const movie_id = match.params.movie_id;
 
@@ -21,14 +22,15 @@ export function MoviePage({ match }) {
   useEffect(() => {
     request(getMovieDetailsURL(movie_id)).then(movie => setMovie(movie));
     request(getMovieCrewURL(movie_id)).then(data => {
-      setActors(data.cast.slice(0, 10));
+      setCast(data.cast.slice(0, 7));
       setCrew(getMainCrew(data.crew));
     });
-  }, [request]);
+  }, [request, movie_id]);
 
   return (
     <>
       <Header movie={movie} crew={crew} />
+      <CastProfiles cast={cast} />
     </>
   );
 }
