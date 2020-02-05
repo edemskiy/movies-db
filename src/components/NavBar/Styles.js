@@ -9,8 +9,9 @@ export const FixedTopBlock = styled.div`
   left: 0;
   width: 100%;
   height: ${navbarHeight}px;
-  border-bottom: 1px solid #b8bbbf;
-  background-color: #dadaff;
+  z-index: 9999;
+  border-bottom: 1px solid #757575;
+  background-color: #313131;
 `;
 
 export const NavBarWrapper = styled.div`
@@ -24,11 +25,11 @@ export const HomeLink = styled(NavLink)`
   margin: 0 5px;
   padding: 0 10px;
   font-size: 24px;
+  color: #fff;
 `;
 export const SearchBar = styled.div`
   display: flex;
   justify-content: center;
-  padding: 10px;
   width: 100%;
 `;
 export const SearchForm = styled.form`
@@ -50,7 +51,7 @@ export const SearchLabel = styled.label`
 `;
 
 export const SearchInput = styled.input`
-  padding: 10px;
+  padding: 7px 10px;
   width: 100%;
   font-size: 1rem;
   background: none;
