@@ -13,7 +13,7 @@ export const Backdrop = styled.div`
     z-index: -1;
     background: url(${props => props.backgroundImage}) no-repeat;
     background-size: cover;
-    filter: opacity(100) grayscale(100%) contrast(130%);
+    filter: opacity(100) grayscale(20%) contrast(130%);
   }
 `;
 

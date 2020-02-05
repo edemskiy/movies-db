@@ -8,5 +8,5 @@ export const CastList = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
-  margin-top: 20px;
+  margin: 20px 0;
 `;
