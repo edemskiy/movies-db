@@ -26,9 +26,10 @@ export const Info = styled.div`
 export const Name = styled.p`
   font-weight: 700;
   &:hover {
-    color: #00b7ff;
+    color: #0f37cc;
   }
 `;
 export const Charachter = styled.p`
+  margin-top: 3px;
   font-size: 0.9rem;
 `;

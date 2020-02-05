@@ -10,7 +10,7 @@ const scaleUp = keyframes`
 `;
 
 export const ResultContainer = styled.div`
-  display: ${props => (props.loading ? "none" : "flex")};
+  display: flex;
   flex-direction: column;
   margin: 5px;
   padding: 8px;
@@ -29,10 +29,17 @@ export const ResultContainer = styled.div`
   }
 `;
 
+export const ImageContainer = styled.div`
+  width: 100%;
+  height: 229px;
+`;
+
 export const Image = styled.img`
   width: 100%;
   height: 225px;
   border-radius: 5px;
+  opacity: ${props => (props.loading ? "0" : "1")};
+  transition: opacity 0.3s;
 `;
 
 export const Info = styled.div`

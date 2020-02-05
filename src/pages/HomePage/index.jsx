@@ -12,19 +12,24 @@ export function HomePage() {
   const [inputTop, setInputTop] = useState(50);
   const [searchResults, setSearchResults] = useState([]);
 
+  let currRequest = null;
+
   function seacrhMedia(event) {
+    clearTimeout(currRequest);
     const query = event.target.value;
     if (!query) {
       setInputTop(50);
       setSearchResults([]);
       return;
     }
-    request(getSearchURL(query)).then(data => {
-      if (data.results) {
-        if (inputTop === 50) setInputTop(0);
-        setSearchResults(data.results.slice(0, 10));
-      }
-    });
+    currRequest = setTimeout(() => {
+      request(getSearchURL(query)).then(data => {
+        if (data.results) {
+          if (inputTop === 50) setInputTop(0);
+          setSearchResults(data.results.slice(0, 10));
+        }
+      });
+    }, 800);
   }
 
   useEffect(() => {

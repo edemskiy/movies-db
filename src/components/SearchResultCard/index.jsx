@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { ResultContainer, Image, Info, Title, About } from "./Styles";
+import {
+  ResultContainer,
+  ImageContainer,
+  Image,
+  Info,
+  Title,
+  About
+} from "./Styles";
 import { Link } from "react-router-dom";
 import { getImageURL } from "../../utils/api";
 
@@ -38,11 +45,14 @@ export function SearchResultCard({ item }) {
   const itemInfo = getItemProps(item);
   return (
     <Link to={itemInfo.link + item.id}>
-      <ResultContainer loading={isImageLoading ? 1 : 0}>
-        <Image
-          src={getImageURL(itemInfo.imagePath, 200)}
-          onLoad={() => setImageLoading(false)}
-        />
+      <ResultContainer>
+        <ImageContainer>
+          <Image
+            loading={isImageLoading ? 1 : 0}
+            src={getImageURL(itemInfo.imagePath, 200)}
+            onLoad={() => setImageLoading(false)}
+          />
+        </ImageContainer>
         <Info>
           <Title>{itemInfo.name}</Title>
           <About>
