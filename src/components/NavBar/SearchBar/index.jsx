@@ -1,6 +1,9 @@
 import React, { useState, useRef } from "react";
 import { useRequest } from "../../../hooks/request";
 import { getSearchURL } from "../../../utils/api";
+import { SearchResult } from "./SearchResult";
+import { getUnifiedSearchedItem } from "../../../utils/search";
+import { Link } from "react-router-dom";
 
 import {
   SearchFormWrapper,
@@ -10,9 +13,6 @@ import {
   SearchInput,
   SearchResults
 } from "./Styles";
-import { SearchResult } from "./SearchResult";
-import { Link } from "react-router-dom";
-import { getUnifiedSearchedItem } from "../../../utils/search";
 
 export function SearchBar() {
   const [searchResults, setSearchResults] = useState([]);
