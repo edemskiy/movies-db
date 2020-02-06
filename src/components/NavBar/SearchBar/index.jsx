@@ -44,7 +44,11 @@ export function SearchBar() {
   function getLinkedSearchResultComponent(item) {
     let unifiedItem = getUnifiedSearchedItem(item);
     return (
-      <Link to={unifiedItem.link + unifiedItem.id} onClick={clearInput}>
+      <Link
+        key={unifiedItem.id}
+        to={unifiedItem.link + unifiedItem.id}
+        onClick={clearInput}
+      >
         <SearchResult item={unifiedItem} />
       </Link>
     );

@@ -5,10 +5,7 @@ import { FoundMedia, Image, Info, Title, About } from "./Styles";
 export function SearchResult({ item }) {
   return (
     <FoundMedia>
-      <Image
-        onLoad={e => console.log(e.target)}
-        src={getImageURL(item.imagePath, 200)}
-      />
+      <Image src={getImageURL(item.imagePath, 200)} />
       <Info>
         <Title>{item.name}</Title>
         <About>{item.type}</About>
