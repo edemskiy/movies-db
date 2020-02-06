@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../../utils/devices";
 
 export const Title = styled.h2`
   margin-top: 40px;
@@ -10,7 +11,7 @@ export const CastList = styled.div`
   align-items: stretch;
   margin: 20px 0;
 
-  @media screen and (max-width: 576px) {
+  @media ${device.sm} {
     flex-wrap: nowrap;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;

@@ -1,13 +1,13 @@
 import React from "react";
-import { SearchResultsWrapper } from "./Styles";
+import Box from "@material-ui/core/Box";
 import { SearchResultCard } from "../SearchResultCard";
 
 export function SearchResultsList({ searchResults }) {
   return (
-    <SearchResultsWrapper>
+    <Box display="flex" flexDirection="row" flexWrap="wrap" mt={"10px"}>
       {searchResults.map(item => (
         <SearchResultCard key={item.id} item={item} />
       ))}
-    </SearchResultsWrapper>
+    </Box>
   );
 }

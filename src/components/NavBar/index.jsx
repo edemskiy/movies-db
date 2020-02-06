@@ -1,15 +1,6 @@
 import React from "react";
-
-import {
-  FixedTopBlock,
-  NavBarWrapper,
-  HomeLink,
-  SearchBar,
-  SearchForm,
-  SearchLabel,
-  SearchInput,
-  EmptyBlock
-} from "./Styles";
+import { SearchBar } from "./SearchBar";
+import { FixedTopBlock, NavBarWrapper, HomeLink, EmptyBlock } from "./Styles";
 
 export function NavBar() {
   return (
@@ -19,18 +10,7 @@ export function NavBar() {
           <HomeLink to="/">
             <i className="fas fa-home"></i>
           </HomeLink>
-          <SearchBar>
-            <SearchForm>
-              <SearchLabel htmlFor="search-input">
-                <i className="fas fa-search"></i>
-              </SearchLabel>
-              <SearchInput
-                placeholder="search"
-                autoComplete="off"
-                id="search-input"
-              />
-            </SearchForm>
-          </SearchBar>
+          <SearchBar />
         </NavBarWrapper>
       </FixedTopBlock>
       <EmptyBlock />

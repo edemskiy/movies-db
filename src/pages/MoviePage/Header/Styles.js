@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { device } from "../../../utils/devices";
+
 export const Backdrop = styled.div`
   width: 100%;
   position: relative;
@@ -15,7 +17,7 @@ export const Backdrop = styled.div`
     background-size: cover;
     filter: grayscale(20%) contrast(130%);
 
-    @media screen and (max-width: 576px) {
+    @media ${device.xs} {
       background-size: contain;
       filter: none;
     }
@@ -28,7 +30,7 @@ export const CustomBackground = styled.div`
     rgb(0, 0, 0) 0%,
     rgba(97, 97, 97, 0.85) 100%
   );
-  @media screen and (max-width: 576px) {
+  @media ${device.xs} {
     background-image: none;
   }
 `;
@@ -36,7 +38,7 @@ export const CustomBackground = styled.div`
 export const ContentWrapper = styled.div`
   display: flex;
   padding: 40px 0;
-  @media screen and (max-width: 576px) {
+  @media ${device.xs} {
     flex-direction: column;
   }
 `;
@@ -44,20 +46,20 @@ export const ContentWrapper = styled.div`
 export const PosterWrapper = styled.div`
   text-align: center;
 
-  @media screen and (max-width: 576px) {
+  @media ${device.xs} {
     text-align: left;
     margin-top: 65px;
   }
 `;
 export const Poster = styled.img`
   width: 300px;
-  @media screen and (max-width: 992px) {
+  @media ${device.md} {
     width: 250px;
   }
-  @media screen and (max-width: 768px) {
+  @media ${device.sm} {
     width: 200px;
   }
-  @media screen and (max-width: 576px) {
+  @media ${device.xs} {
     width: 30vw;
   }
 `;
@@ -65,7 +67,7 @@ export const Poster = styled.img`
 export const MovieDetails = styled.div`
   margin-left: 40px;
   color: white;
-  @media screen and (max-width: 576px) {
+  @media ${device.xs} {
     margin: 0;
     color: black;
   }
@@ -74,7 +76,7 @@ export const MovieDetails = styled.div`
 export const Title = styled.h2`
   margin-top: 10px;
   font-size: 2.5rem;
-  @media screen and (max-width: 576px) {
+  @media ${device.xs} {
     margin-top: -50px;
     margin-left: 35%;
     text-align: right;
@@ -86,7 +88,7 @@ export const ReleaseYear = styled.p`
   margin: 5px;
   color: #e0e0e0;
   font-weight: 300;
-  @media screen and (max-width: 576px) {
+  @media ${device.xs} {
     text-align: right;
     color: #5d5d5d;
   }

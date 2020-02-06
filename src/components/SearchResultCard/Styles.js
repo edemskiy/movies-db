@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components";
+import { device } from "../../utils/devices";
 
 const scaleUp = keyframes`
     from {
@@ -23,7 +24,7 @@ export const ResultContainer = styled.div`
     box-shadow: 0px 4px 10px 3px #0000007a;
     transform: scale(1.05);
   }
-  @media screen and (max-width: 480px) {
+  @media ${device.xs} {
     padding: 0px;
     width: 150px;
   }
