@@ -14,11 +14,13 @@ export const Backdrop = styled.div`
     width: 100%;
     z-index: -1;
     background: url(${props => props.backgroundImage}) no-repeat;
+    background-position-y: center;
     background-size: cover;
     filter: grayscale(20%) contrast(130%);
 
     @media ${device.xs} {
       background-size: contain;
+      background-position-y: top;
       filter: none;
     }
   }

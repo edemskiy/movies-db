@@ -3,6 +3,8 @@ import { useRequest } from "../../hooks/request";
 import { getMovieDetailsURL, getMovieCrewURL } from "../../utils/api";
 import { Header } from "./Header";
 import { CastProfiles } from "./CastProfiles";
+import { MovieInfoBlock } from "./Styles";
+import { Sidebar } from "./Sidebar";
 
 export function MoviePage({ match }) {
   const { request } = useRequest();
@@ -30,7 +32,10 @@ export function MoviePage({ match }) {
   return (
     <>
       <Header movie={movie} crew={crew} />
-      <CastProfiles cast={cast} />
+      <MovieInfoBlock>
+        <CastProfiles cast={cast} />
+        <Sidebar movie={movie} />
+      </MovieInfoBlock>
     </>
   );
 }
