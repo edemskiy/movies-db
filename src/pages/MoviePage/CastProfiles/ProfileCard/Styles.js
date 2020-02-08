@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
 export const CardContainer = styled.div`
-  margin: 5px;
+  margin: 10px;
   max-width: 138px;
   box-shadow: 0px 2px 5px 0px #00000057;
 `;

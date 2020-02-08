@@ -24,7 +24,7 @@ export function MoviePage({ match }) {
   useEffect(() => {
     request(getMovieDetailsURL(movie_id)).then(movie => setMovie(movie));
     request(getMovieCrewURL(movie_id)).then(data => {
-      setCast(data.cast.slice(0, 7));
+      setCast(data.cast.slice(0, 10));
       setCrew(getMainCrew(data.crew));
     });
   }, [request, movie_id]);

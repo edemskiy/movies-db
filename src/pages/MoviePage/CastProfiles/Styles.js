@@ -3,6 +3,9 @@ import { device } from "../../../utils/devices";
 
 export const Title = styled.h2`
   margin-top: 40px;
+  @media ${device.sm} {
+    margin-top: 10px;
+  }
 `;
 
 export const CastList = styled.div`
@@ -10,7 +13,6 @@ export const CastList = styled.div`
   flex-wrap: wrap;
   align-items: stretch;
   margin: 20px 0;
-
   @media ${device.sm} {
     flex-wrap: nowrap;
     overflow-x: auto;

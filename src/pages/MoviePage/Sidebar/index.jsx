@@ -12,7 +12,7 @@ function getRuntimeString(minutes) {
 }
 
 function getLocaleDate(dateString) {
-  return new Date(dateString).toLocaleString(undefined, {
+  return new Date(dateString).toLocaleString("en-GB", {
     day: "2-digit",
     month: "long",
     year: "numeric"
@@ -22,13 +22,17 @@ function getLocaleDate(dateString) {
 function getSidebarMovieProps(movie) {
   return Object.keys(movie).length
     ? {
-        Budget: `$${movie["budget"]}`,
+        Budget: movie["budget"]
+          ? `$${movie["budget"].toLocaleString()}`
+          : "No info",
         Genres: movie["genres"].map(genre => genre.name).join(", "),
         Country: movie["production_countries"]
           .map(country => country["iso_3166_1"])
           .join(", "),
         "Release date": getLocaleDate(movie["release_date"]),
-        "Box office": `$${movie["revenue"]}`,
+        "Box office": movie["revenue"]
+          ? `$${movie["revenue"].toLocaleString()}`
+          : "No info",
         Runtime: getRuntimeString(movie["runtime"])
       }
     : null;
@@ -42,7 +46,7 @@ export function Sidebar({ movie }) {
           Object.keys(movieProps).map(propName => (
             <MovieProperty key={propName}>
               <PropertyTitle>{propName}</PropertyTitle>
-              <PropertyValue>{movieProps[propName] || "No info"}</PropertyValue>
+              <PropertyValue>{movieProps[propName]}</PropertyValue>
             </MovieProperty>
           ))}
       </MovieInfo>

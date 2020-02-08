@@ -14,7 +14,7 @@ export const Backdrop = styled.div`
     width: 100%;
     z-index: -1;
     background: url(${props => props.backgroundImage}) no-repeat;
-    background-position-y: center;
+    background-position-y: initial;
     background-size: cover;
     filter: grayscale(20%) contrast(130%);
 
@@ -39,9 +39,10 @@ export const CustomBackground = styled.div`
 
 export const ContentWrapper = styled.div`
   display: flex;
-  padding: 40px 0;
+  padding: 60px 0;
   @media ${device.xs} {
     flex-direction: column;
+    padding: 30px 0;
   }
 `;
 
@@ -68,6 +69,8 @@ export const Poster = styled.img`
 
 export const MovieDetails = styled.div`
   margin-left: 40px;
+  margin-top: auto;
+  margin-bottom: auto;
   color: white;
   @media ${device.xs} {
     margin: 0;
@@ -98,6 +101,9 @@ export const ReleaseYear = styled.p`
 
 export const OverviewTitle = styled.h3`
   margin-top: 40px;
+  @media ${device.xs} {
+    margin-top: 0;
+  }
 `;
 
 export const Overview = styled.p`
