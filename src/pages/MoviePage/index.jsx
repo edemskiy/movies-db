@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useRequest } from "../../hooks/request";
 import { getMovieDetailsURL, getMovieCrewURL } from "../../utils/api";
+import { FullScreenSpinner } from "../../components/FullScreenSpinner";
 import { Header } from "./Header";
 import { CastProfiles } from "./CastProfiles";
 import { MovieInfoBlock } from "./Styles";
 import { Sidebar } from "./Sidebar";
 
 export function MoviePage({ match }) {
-  const { request } = useRequest();
+  const { request, isLoading } = useRequest();
   const [movie, setMovie] = useState({});
   const [crew, setCrew] = useState([]);
   const [cast, setCast] = useState([]);
@@ -29,7 +30,9 @@ export function MoviePage({ match }) {
     });
   }, [request, movie_id]);
 
-  return (
+  return isLoading ? (
+    <FullScreenSpinner size={60} />
+  ) : (
     <>
       <Header movie={movie} crew={crew} />
       <MovieInfoBlock>
