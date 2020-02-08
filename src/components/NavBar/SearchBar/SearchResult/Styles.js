@@ -17,11 +17,15 @@ export const Info = styled.div`
   margin-left: 10px;
   flex-direction: column;
   justify-content: space-around;
+  overflow: hidden;
 `;
 
 export const Title = styled.div`
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `;
 
 export const About = styled.div``;
