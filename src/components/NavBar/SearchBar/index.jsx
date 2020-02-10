@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import { useRequest } from "../../../hooks/request";
 import { getSearchURL } from "../../../utils/api";
 import { SearchResult } from "./SearchResult";
-import { getUnifiedSearchedItem } from "../../../utils/search";
+import { getUnifiedMedia } from "../../../utils/search";
 import { Link } from "react-router-dom";
 
 import {
@@ -42,7 +42,7 @@ export function SearchBar() {
   }
 
   function getLinkedSearchResultComponent(item) {
-    let unifiedItem = getUnifiedSearchedItem(item);
+    let unifiedItem = getUnifiedMedia(item);
     return (
       <Link
         key={unifiedItem.id}

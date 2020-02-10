@@ -13,7 +13,7 @@ export function MoviePage({ match }) {
   const [crew, setCrew] = useState([]);
   const [cast, setCast] = useState([]);
 
-  const movie_id = match.params.movie_id;
+  const { movie_type, movie_id } = match.params;
 
   function getMainCrew(crew) {
     return [
@@ -23,12 +23,14 @@ export function MoviePage({ match }) {
     ].filter(Boolean);
   }
   useEffect(() => {
-    request(getMovieDetailsURL(movie_id)).then(movie => setMovie(movie));
-    request(getMovieCrewURL(movie_id)).then(data => {
+    request(getMovieDetailsURL(movie_type, movie_id)).then(movie =>
+      setMovie({ ...movie, media_type: movie_type })
+    );
+    request(getMovieCrewURL(movie_type, movie_id)).then(data => {
       setCast(data.cast.slice(0, 10));
       setCrew(getMainCrew(data.crew));
     });
-  }, [request, movie_id]);
+  }, [request, movie_type, movie_id]);
 
   return isLoading ? (
     <FullScreenSpinner size={60} />

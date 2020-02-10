@@ -8,8 +8,8 @@ export function SearchResult({ item }) {
       <Image src={getImageURL(item.imagePath, 200)} />
       <Info>
         <Title>{item.name}</Title>
-        <About>{item.type}</About>
-        <About>{item.info}</About>
+        <About>{item.media_type}</About>
+        <About>{item.release_year}</About>
       </Info>
     </FoundMedia>
   );

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { getUnifiedSearchedItem } from "../../utils/search";
+import { getUnifiedMedia } from "../../utils/search";
 import {
   ResultContainer,
   ImageContainer,
@@ -13,7 +13,7 @@ import { getImageURL } from "../../utils/api";
 
 export function SearchResultCard({ item }) {
   const [isImageLoading, setImageLoading] = useState(true);
-  const itemInfo = getUnifiedSearchedItem(item);
+  const itemInfo = getUnifiedMedia(item);
   return (
     <Link to={itemInfo.link + item.id}>
       <ResultContainer>

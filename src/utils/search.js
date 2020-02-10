@@ -1,31 +1,36 @@
-export function getUnifiedSearchedItem(item) {
-  let unifiedItem;
-  switch (item.media_type) {
-    case "movie":
-      unifiedItem = {
-        imagePath: item["poster_path"],
-        name: item["original_title"],
-        info: (item["release_date"] || "").substr(0, 4),
-        link: "/movies/"
-      };
-      break;
-    case "person":
-      unifiedItem = {
-        imagePath: item["profile_path"],
-        name: item["name"],
-        link: "/persons/"
-      };
-      break;
-    case "tv":
-      unifiedItem = {
-        imagePath: item["poster_path"],
-        name: item["original_name"],
-        info: (item["first_air_date"] || "").substr(0, 4),
-        link: "/tv/"
-      };
-      break;
-    default:
-      unifiedItem = {};
-  }
-  return { ...unifiedItem, type: item.media_type, id: item.id };
+export function getUnifiedMedia(item) {
+  const unifiedItem = (function() {
+    console.log(item);
+    switch (item.media_type) {
+      case "movie":
+        return {
+          imagePath: item["poster_path"],
+          name: item["original_title"],
+          release_date: item["release_date"] || "",
+          link: "/movie/"
+        };
+      case "person":
+        return {
+          imagePath: item["profile_path"],
+          name: item["name"],
+          link: "/person/"
+        };
+      case "tv":
+        return {
+          imagePath: item["poster_path"],
+          name: item["original_name"],
+          release_date: item["first_air_date"] || "",
+          link: "/tv/"
+        };
+      default:
+        return {
+          imagePath: "",
+          name: "",
+          release_date: "",
+          link: ""
+        };
+    }
+  })();
+
+  return { ...item, ...unifiedItem };
 }

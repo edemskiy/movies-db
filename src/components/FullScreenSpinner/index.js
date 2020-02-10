@@ -16,7 +16,7 @@ const FullScreenWrapper = styled.div`
 export function FullScreenSpinner({ size }) {
   return (
     <FullScreenWrapper>
-      <CircularProgress size={size} color="black" />
+      <CircularProgress size={size} color="inherit" />
     </FullScreenWrapper>
   );
 }
