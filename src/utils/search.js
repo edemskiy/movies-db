@@ -1,13 +1,12 @@
 export function getUnifiedMedia(item) {
   const unifiedItem = (function() {
-    console.log(item);
     switch (item.media_type) {
       case "movie":
         return {
           imagePath: item["poster_path"],
           name: item["original_title"],
           release_date: item["release_date"] || "",
-          link: "/movie/"
+          link: "/media/movie/"
         };
       case "person":
         return {
@@ -20,7 +19,7 @@ export function getUnifiedMedia(item) {
           imagePath: item["poster_path"],
           name: item["original_name"],
           release_date: item["first_air_date"] || "",
-          link: "/tv/"
+          link: "/media/tv/"
         };
       default:
         return {

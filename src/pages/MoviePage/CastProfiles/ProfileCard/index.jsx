@@ -16,14 +16,14 @@ export function ProfileCard({ actor }) {
   return (
     <CardContainer>
       <PictureLink
-        to={`/persons/${actor.id}`}
+        to={`/person/${actor.id}`}
         loading={isImageLoading ? 1 : 0}
         onLoad={() => setImageLoading(false)}
       >
         <ProfilePicture src={getImageURL(actor.profile_path, 200)} />
       </PictureLink>
       <Info>
-        <Link to={`/persons/${actor.id}`}>
+        <Link to={`/person/${actor.id}`}>
           <Name>{actor.name}</Name>
         </Link>
         <Charachter>{actor.character}</Charachter>

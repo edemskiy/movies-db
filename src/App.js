@@ -14,8 +14,8 @@ function App() {
         <Route exact path="/" component={HomePage} />
         <Route path="/">
           <NavBar />
-          <Route path="/:movie_type/:movie_id" component={MoviePage} />
-          <Route path="/persons/:person_id" component={PersonPage} />
+          <Route path="/media/:movie_type/:movie_id" component={MoviePage} />
+          <Route path="/person/:person_id" component={PersonPage} />
         </Route>
       </Switch>
     </BrowserRouter>

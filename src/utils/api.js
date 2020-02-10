@@ -18,3 +18,7 @@ export function getImageURL(path, size) {
 export function getMovieCrewURL(movie_type, movie_id) {
   return `${host}/${movie_type}/${movie_id}/credits?api_key=${API_KEY}&language=en-US`;
 }
+
+export function getPersonDetailsURL(person_id) {
+  return `${host}/person/${person_id}?api_key=${API_KEY}&language=en-US`;
+}
