@@ -14,7 +14,6 @@ import {
 } from "./Styles";
 
 export function Header({ person }) {
-  console.log(person.biography);
   return (
     <Background>
       <Container>
@@ -26,8 +25,8 @@ export function Header({ person }) {
             <Name>{person.name}</Name>
             <BiographyTitle>Biography</BiographyTitle>
             <Biography>
-              {(person.biography || "").split("\n").map(paragraph => (
-                <Paragraph>{paragraph}</Paragraph>
+              {(person.biography || "").split("\n").map((paragraph, i) => (
+                <Paragraph key={i}>{paragraph}</Paragraph>
               ))}
             </Biography>
           </PersonInfo>

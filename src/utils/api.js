@@ -22,3 +22,7 @@ export function getMovieCrewURL(movie_type, movie_id) {
 export function getPersonDetailsURL(person_id) {
   return `${host}/person/${person_id}?api_key=${API_KEY}&language=en-US`;
 }
+
+export function getPersonCredits(person_id) {
+  return `${host}/person/${person_id}/combined_credits?api_key=${API_KEY}&language=en-US`;
+}
