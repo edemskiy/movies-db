@@ -32,10 +32,6 @@ export function HomePage() {
     }, 800);
   }
 
-  useEffect(() => {
-    console.log(searchResults);
-  }, [searchResults]);
-
   return (
     <Container>
       <Box height="100vh">

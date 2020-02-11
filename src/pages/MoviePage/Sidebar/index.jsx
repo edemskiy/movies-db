@@ -11,7 +11,7 @@ import { getUnifiedMedia } from "../../../utils/search";
 function getRuntimeString(runtimeInMinutes) {
   const hours = (runtimeInMinutes - (runtimeInMinutes % 60)) / 60;
   const minutes = runtimeInMinutes % 60;
-  return (hours ? `${hours}h` : "") + (minutes ? `${minutes}m` : "");
+  return (hours ? `${hours}h ` : "") + (minutes ? `${minutes}m` : "");
 }
 
 function getLocaleDate(dateString) {
