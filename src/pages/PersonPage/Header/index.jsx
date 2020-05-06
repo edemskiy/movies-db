@@ -10,7 +10,7 @@ import {
   Name,
   BiographyTitle,
   Biography,
-  Paragraph
+  Paragraph,
 } from "./Styles";
 
 export function Header({ person }) {

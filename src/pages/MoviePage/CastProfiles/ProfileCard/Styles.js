@@ -13,7 +13,7 @@ export const PictureLink = styled(NavLink)`
   height: 180px;
   overflow: hidden;
   transition: opacity 0.2s;
-  opacity: ${props => (props.loading ? 0 : 1)};
+  opacity: ${(props) => (props.loading ? 0 : 1)};
 `;
 export const ProfilePicture = styled.img`
   width: 100%;

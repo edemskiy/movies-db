@@ -9,7 +9,7 @@ export function CastProfiles({ cast }) {
     <Container>
       <Title>Main cast</Title>
       <CastList>
-        {cast.map(actor => (
+        {cast.map((actor) => (
           <ProfileCard key={actor.id} actor={actor}></ProfileCard>
         ))}
       </CastList>

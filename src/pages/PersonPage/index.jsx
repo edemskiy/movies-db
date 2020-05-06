@@ -16,8 +16,8 @@ export function PersonPage({ match }) {
   const person_id = match.params.person_id;
 
   useEffect(() => {
-    request(getPersonDetailsURL(person_id)).then(data => setPerson(data));
-    request(getPersonCredits(person_id)).then(data => setCredits(data));
+    request(getPersonDetailsURL(person_id)).then((data) => setPerson(data));
+    request(getPersonCredits(person_id)).then((data) => setCredits(data));
   }, [request, person_id]);
 
   return isLoading ? (

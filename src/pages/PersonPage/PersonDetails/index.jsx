@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  PersonDetailsWrapper,
-  DetailsTitle,
-  PersonDetail,
-  DetailTitle,
-  DetailValue
-} from "./Styles";
+import { PersonDetailsWrapper, DetailsTitle, PersonDetail, DetailTitle, DetailValue } from "./Styles";
 import { Container } from "@material-ui/core";
 
 function getLocaleDate(dateString) {
@@ -13,7 +7,7 @@ function getLocaleDate(dateString) {
     ? new Date(dateString).toLocaleString("en-GB", {
         day: "2-digit",
         month: "long",
-        year: "numeric"
+        year: "numeric",
       })
     : null;
 }
@@ -25,7 +19,7 @@ function getPersonDetails(person) {
         Birthdate: getLocaleDate(person["birthday"]),
         "Day of death": getLocaleDate(person["deathday"]),
         "Place of birth": person["place_of_birth"],
-        "Official site": person["homepage"]
+        "Official site": person["homepage"],
       }
     : null;
 }
@@ -37,7 +31,7 @@ export function PersonDetails({ person }) {
       <Container maxWidth="sm">
         <DetailsTitle>Personal Info</DetailsTitle>
         {Object.keys(details).map(
-          propName =>
+          (propName) =>
             details[propName] && (
               <PersonDetail key={propName}>
                 <DetailTitle>{propName}</DetailTitle>

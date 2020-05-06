@@ -1,19 +1,12 @@
 import React from "react";
 import Container from "@material-ui/core/Container";
 
-import {
-  DepartmentTitle,
-  Credits,
-  Credit,
-  CreditLink,
-  CreditRole,
-  CreditYear
-} from "./Styles";
+import { DepartmentTitle, Credits, Credit, CreditLink, CreditRole, CreditYear } from "./Styles";
 
 function getHashCredits(credits) {
   if (Object.keys(credits).length === 0) return {};
   let obj = {};
-  credits.crew.forEach(credit => {
+  credits.crew.forEach((credit) => {
     obj[credit["department"]] = obj[credit["department"]] || [];
     obj[credit["department"]].push(credit);
   });
@@ -21,22 +14,13 @@ function getHashCredits(credits) {
 }
 
 function getCreditJSX(credit) {
-  const role =
-    (credit["job"] && `... ${credit["job"]}`) ||
-    (credit["character"] && `as ${credit["character"]}`) ||
-    "";
-  const year = (
-    credit["release_date"] ||
-    credit["first_air_date"] ||
-    ""
-  ).substr(0, 4);
+  const role = (credit["job"] && `... ${credit["job"]}`) || (credit["character"] && `as ${credit["character"]}`) || "";
+  const year = (credit["release_date"] || credit["first_air_date"] || "").substr(0, 4);
   const title = credit["original_title"] || credit["original_name"];
 
   return (
     <Credit key={credit.id + role}>
-      <CreditLink to={`/media/${credit.media_type}/${credit.id}`}>
-        {title}
-      </CreditLink>
+      <CreditLink to={`/media/${credit.media_type}/${credit.id}`}>{title}</CreditLink>
       <CreditRole>&nbsp;{role}</CreditRole>
       <CreditYear>&nbsp;({year || "unscheduled"})</CreditYear>
     </Credit>
@@ -59,25 +43,19 @@ export function PersonCredits({ person, credits }) {
   const mainCredits = combinedCredits[person["known_for_department"]];
   const restCredits = {
     ...combinedCredits,
-    [person["known_for_department"]]: null
+    [person["known_for_department"]]: null,
   };
 
   return (
     <Container maxWidth="sm">
       <DepartmentTitle>{person["known_for_department"]}</DepartmentTitle>
-      <Credits>
-        {mainCredits && [...mainCredits.sort(sortByYear)].map(getCreditJSX)}
-      </Credits>
+      <Credits>{mainCredits && [...mainCredits.sort(sortByYear)].map(getCreditJSX)}</Credits>
       {Object.keys(restCredits).map(
-        depatrment =>
+        (depatrment) =>
           restCredits[depatrment] && (
             <React.Fragment key={depatrment}>
               <DepartmentTitle>{depatrment}</DepartmentTitle>
-              <Credits>
-                {[...restCredits[depatrment].sort(sortByYear)].map(
-                  getCreditJSX
-                )}
-              </Credits>
+              <Credits>{[...restCredits[depatrment].sort(sortByYear)].map(getCreditJSX)}</Credits>
             </React.Fragment>
           )
       )}

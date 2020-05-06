@@ -13,7 +13,7 @@ export const Backdrop = styled.div`
     height: 100%;
     width: 100%;
     z-index: -1;
-    background: url(${props => props.backgroundImage}) no-repeat;
+    background: url(${(props) => props.backgroundImage}) no-repeat;
     background-position-y: initial;
     background-size: cover;
     filter: grayscale(20%) contrast(130%);
@@ -27,11 +27,7 @@ export const Backdrop = styled.div`
 `;
 
 export const CustomBackground = styled.div`
-  background-image: radial-gradient(
-    circle at 20% 50%,
-    rgb(0, 0, 0) 0%,
-    rgba(97, 97, 97, 0.85) 100%
-  );
+  background-image: radial-gradient(circle at 20% 50%, rgb(0, 0, 0) 0%, rgba(97, 97, 97, 0.85) 100%);
   @media ${device.xs} {
     background-image: none;
   }

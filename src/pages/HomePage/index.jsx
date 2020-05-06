@@ -23,7 +23,7 @@ export function HomePage() {
       return;
     }
     currRequest = setTimeout(() => {
-      request(getSearchURL(query)).then(data => {
+      request(getSearchURL(query)).then((data) => {
         if (data.results) {
           if (inputTop === 50) setInputTop(0);
           setSearchResults(data.results.slice(0, 10));

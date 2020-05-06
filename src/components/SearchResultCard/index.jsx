@@ -1,13 +1,6 @@
 import React, { useState } from "react";
 import { getUnifiedMedia } from "../../utils/search";
-import {
-  ResultContainer,
-  ImageContainer,
-  Image,
-  Info,
-  Title,
-  About
-} from "./Styles";
+import { ResultContainer, ImageContainer, Image, Info, Title, About } from "./Styles";
 import { Link } from "react-router-dom";
 import { getImageURL } from "../../utils/api";
 

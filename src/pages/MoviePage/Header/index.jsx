@@ -18,7 +18,7 @@ import {
   MainCrew,
   CrewMember,
   JobTitle,
-  Name
+  Name,
 } from "./Styles";
 
 export function Header({ movie, crew }) {
@@ -38,7 +38,7 @@ export function Header({ movie, crew }) {
               <Overview>{media.overview}</Overview>
               {!!crew.length && (
                 <MainCrew>
-                  {crew.map(member => (
+                  {crew.map((member) => (
                     <CrewMember key={member.credit_id}>
                       <JobTitle>{member.job}:&nbsp;</JobTitle>
                       <Name>{member.name}</Name>

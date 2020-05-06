@@ -39,7 +39,7 @@ export const Image = styled.img`
   width: 100%;
   height: 225px;
   border-radius: 5px;
-  opacity: ${props => (props.loading ? "0" : "1")};
+  opacity: ${(props) => (props.loading ? "0" : "1")};
   transition: opacity 0.3s;
 `;
 
