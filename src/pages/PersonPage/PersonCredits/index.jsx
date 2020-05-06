@@ -49,13 +49,13 @@ export function PersonCredits({ person, credits }) {
   return (
     <Container maxWidth="sm">
       <DepartmentTitle>{person["known_for_department"]}</DepartmentTitle>
-      <Credits>{mainCredits && [...mainCredits.sort(sortByYear)].map(getCreditJSX)}</Credits>
+      <Credits>{mainCredits && mainCredits.sort(sortByYear).map(getCreditJSX)}</Credits>
       {Object.keys(restCredits).map(
         (depatrment) =>
           restCredits[depatrment] && (
             <React.Fragment key={depatrment}>
               <DepartmentTitle>{depatrment}</DepartmentTitle>
-              <Credits>{[...restCredits[depatrment].sort(sortByYear)].map(getCreditJSX)}</Credits>
+              <Credits>{restCredits[depatrment].sort(sortByYear).map(getCreditJSX)}</Credits>
             </React.Fragment>
           )
       )}
